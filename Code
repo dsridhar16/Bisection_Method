@@ -1,0 +1,12 @@
+def bisection(startingpoint, endingpoint):
+  for n in range(10000):
+    mid=(startingpoint+endingpoint)/2
+    if (((startingpoint**5)-(5*startingpoint**4)+(5*startingpoint**3)+(5*startingpoint**2)-(6*startingpoint)-1)*((mid**5)-(5*mid**4)+(5*mid**3)+(5*mid**2)-(6*mid)-1))<0:
+      endingpoint=mid
+    elif ((endingpoint**5)-(5*endingpoint**4)+(5*endingpoint**3)+(5*endingpoint**2)-(6*endingpoint)-1)*((mid**5)-(5*mid**4)+(5*mid**3)+(5*mid**2)-(6*mid)-1)<0:
+      startingpoint=mid
+    if abs(((mid**5)-(5*mid**4)+(5*mid**3)+(5*mid**2)-(6*mid)-1))<.00000000001:
+      print ("Bisection root value is:",mid)
+      return
+bisection(-1,-0.5)
+bisection(-0.5,0)
